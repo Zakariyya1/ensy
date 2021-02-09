@@ -12,12 +12,21 @@ class ArticlesList extends Component {
     this.getArticles();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.topic !== this.props.topic) {
+      this.getArticles();
+    }
+  }
+
   render() {
     const { articles, isLoading } = this.state;
 
     if (isLoading) return <p>Loading...</p>;
     return (
       <main className="articleslist">
+        {this.props.topic && (
+          <h3 className="articleslisth3">Topic: {`${this.props.topic}`}</h3>
+        )}
         {articles.map((article) => {
           return <ArticleCard key={`${article.article_id}`} {...article} />;
         })}
@@ -26,7 +35,8 @@ class ArticlesList extends Component {
   }
 
   getArticles = () => {
-    api.fetchArticles().then(({ data: { articles } }) => {
+    this.setState({ isLoading: true });
+    api.fetchArticles(this.props.topic).then(({ data: { articles } }) => {
       this.setState({ articles, isLoading: false });
     });
   };

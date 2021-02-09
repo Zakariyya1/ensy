@@ -50,6 +50,11 @@
   border: #c7b61b solid 3px;
 }
 
+.articleslisth3 {
+  border: #881bc7 solid 3px;
+  margin: 0%;
+}
+
 .articlecard {
   border: #22a511 solid 3px;
   margin-top: 2%;

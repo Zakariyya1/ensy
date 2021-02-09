@@ -10,8 +10,14 @@ export const fetchTopics = () => {
   });
 };
 
-export const fetchArticles = () => {
-  return request.get('/articles').then((data) => {
-    return data;
-  });
+export const fetchArticles = (topic) => {
+  return request
+    .get('/articles', {
+      params: {
+        topic
+      }
+    })
+    .then((data) => {
+      return data;
+    });
 };
