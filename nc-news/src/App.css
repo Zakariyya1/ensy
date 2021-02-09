@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.title {
+  border: #c71b1b solid 3px;
+}
+
+.navbar {
+  border: #61dafb solid 3px;
+  padding: 2%;
+}
+
+.articleslist {
+  border: #c7b61b solid 3px;
+}
+
+.articlecard {
+  border: #22a511 solid 3px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 1%;
+  margin-right: 1%;
+}

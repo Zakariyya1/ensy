@@ -17,7 +17,7 @@ class ArticlesList extends Component {
 
     if (isLoading) return <p>Loading...</p>;
     return (
-      <main>
+      <main className="articleslist">
         {articles.map((article) => {
           return <ArticleCard key={`${article.article_id}`} {...article} />;
         })}

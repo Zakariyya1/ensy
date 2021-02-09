@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ArticleCard = (props) => {
-  console.log(props);
   return (
     <section className="articlecard">
       <h3>{`${props.title}`}</h3>
