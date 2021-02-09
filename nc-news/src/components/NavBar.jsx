@@ -9,24 +9,23 @@ class NavBar extends Component {
   };
 
   componentDidMount() {
-    api.fetchTopics().then(({ data: { topics } }) => {
-      this.setState({ topics: topics, isLoading: false });
-    });
+    this.getTopics();
   }
 
   render() {
     const { topics, isLoading } = this.state;
+    if (isLoading) return <p>Loading...</p>;
     return (
       <nav className="navbar">
         <button>
-          <Link to={`/`}>Home</Link>
+          <Link to={`/`}>home</Link>
         </button>
         <button>
-          <Link to={`/`}>Publish Article</Link>
-        </button>{' '}
+          <Link to={`/`}>publish article</Link>
+        </button>
         {topics.map((topic) => {
           return (
-            <button>
+            <button key={`${topic.slug}`}>
               <Link to={`/${topic.slug}/articles`}>{topic.slug}</Link>
             </button>
           );
@@ -34,6 +33,12 @@ class NavBar extends Component {
       </nav>
     );
   }
+
+  getTopics = () => {
+    api.fetchTopics().then(({ data: { topics } }) => {
+      this.setState({ topics: topics, isLoading: false });
+    });
+  };
 }
 
 export default NavBar;

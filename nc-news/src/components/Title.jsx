@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from '@reach/router';
 
 const Title = () => {
   return (
-    <header>
-      <h1>NC-News</h1>
-    </header>
+    <button>
+      <Link to={`/`}>
+        <h1>NC-News</h1>
+      </Link>
+    </button>
   );
 };
 
