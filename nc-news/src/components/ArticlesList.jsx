@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import ArticleCard from './ArticleCard';
+import ErrorPage from './ErrorPage';
 
 class ArticlesList extends Component {
   state = {
     articles: [],
-    isLoading: true
+    isLoading: true,
+    errorMessage: ''
   };
 
   componentDidMount() {
@@ -19,8 +21,9 @@ class ArticlesList extends Component {
   }
 
   render() {
-    const { articles, isLoading } = this.state;
+    const { articles, isLoading, errorMessage } = this.state;
 
+    if (errorMessage) return <ErrorPage msg={errorMessage} />;
     if (isLoading) return <p>Loading...</p>;
     return (
       <main className="articleslist">
@@ -36,9 +39,20 @@ class ArticlesList extends Component {
 
   getArticles = () => {
     this.setState({ isLoading: true });
-    api.fetchArticles(this.props.topic).then(({ data: { articles } }) => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchArticles(this.props.topic)
+      .then(({ data: { articles } }) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg }
+          }
+        }) => {
+          this.setState({ errorMessage: msg });
+        }
+      );
   };
 }
 
