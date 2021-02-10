@@ -4,13 +4,13 @@ const request = axios.create({
   baseURL: 'http://be-nc-news-api.herokuapp.com/api'
 });
 
-export const fetchTopics = () => {
+export const getTopics = () => {
   return request.get('/topics').then((data) => {
     return data;
   });
 };
 
-export const fetchArticles = (topic) => {
+export const getArticles = (topic) => {
   return request
     .get('/articles', {
       params: {

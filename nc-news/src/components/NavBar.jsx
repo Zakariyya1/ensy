@@ -9,7 +9,7 @@ class NavBar extends Component {
   };
 
   componentDidMount() {
-    this.getTopics();
+    this.fetchTopics();
   }
 
   render() {
@@ -34,8 +34,8 @@ class NavBar extends Component {
     );
   }
 
-  getTopics = () => {
-    api.fetchTopics().then(({ data: { topics } }) => {
+  fetchTopics = () => {
+    api.getTopics().then(({ data: { topics } }) => {
       this.setState({ topics: topics, isLoading: false });
     });
   };

@@ -11,12 +11,12 @@ class ArticlesList extends Component {
   };
 
   componentDidMount() {
-    this.getArticles();
+    this.fetchArticles();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.topic !== this.props.topic) {
-      this.getArticles();
+      this.fetchArticles();
     }
   }
 
@@ -37,10 +37,10 @@ class ArticlesList extends Component {
     );
   }
 
-  getArticles = () => {
+  fetchArticles = () => {
     this.setState({ isLoading: true });
     api
-      .fetchArticles(this.props.topic)
+      .getArticles(this.props.topic)
       .then(({ data: { articles } }) => {
         this.setState({ articles, isLoading: false });
       })
