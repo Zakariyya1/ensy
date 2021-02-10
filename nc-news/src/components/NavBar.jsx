@@ -21,7 +21,7 @@ class NavBar extends Component {
           <Link to={`/`}>home</Link>
         </button>
         <button>
-          <Link to={`/`}>publish article</Link>
+          <Link to={`/publish`}>publish article</Link>
         </button>
         {topics.map((topic) => {
           return (
