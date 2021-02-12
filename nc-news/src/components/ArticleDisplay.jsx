@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import * as api from '../api';
+import { formatDate } from '../utils/utils';
 
 class ArticleDisplay extends Component {
   state = {
     isLoading: true,
-    article: {},
-    comments: []
+    article: {}
   };
 
   componentDidMount = () => {
@@ -16,13 +16,21 @@ class ArticleDisplay extends Component {
   };
 
   render() {
-    const { isLoading, article, comments } = this.state;
+    const { isLoading, article } = this.state;
+    console.log(article);
     return (
       <main>
-        <article>
-          <h2>{article.title}</h2>
-          <p>{article.body}</p>
-        </article>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <article>
+            <h2>{article.title}</h2>
+            <p>
+              by {`${article.author}`} on {`${formatDate(article.created_at)}`}
+            </p>
+            <p>{article.body}</p>
+          </article>
+        )}
       </main>
     );
   }
