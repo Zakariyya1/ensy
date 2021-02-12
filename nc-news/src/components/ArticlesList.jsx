@@ -41,7 +41,7 @@ class ArticlesList extends Component {
     this.setState({ isLoading: true });
     api
       .getArticles(this.props.topic)
-      .then(({ data: { articles } }) => {
+      .then((articles) => {
         this.setState({ articles, isLoading: false });
       })
       .catch(

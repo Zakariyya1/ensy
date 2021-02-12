@@ -5,8 +5,8 @@ const request = axios.create({
 });
 
 export const getTopics = () => {
-  return request.get('/topics').then((data) => {
-    return data;
+  return request.get('/topics').then(({ data: { topics } }) => {
+    return topics;
   });
 };
 
@@ -17,8 +17,8 @@ export const getArticles = (topic) => {
         topic
       }
     })
-    .then((data) => {
-      return data;
+    .then(({ data: { articles } }) => {
+      return articles;
     });
 };
 

@@ -35,7 +35,7 @@ class NavBar extends Component {
   }
 
   fetchTopics = () => {
-    api.getTopics().then(({ data: { topics } }) => {
+    api.getTopics().then((topics) => {
       this.setState({ topics: topics, isLoading: false });
     });
   };

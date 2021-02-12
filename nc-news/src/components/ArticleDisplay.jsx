@@ -17,7 +17,7 @@ class ArticleDisplay extends Component {
 
   render() {
     const { isLoading, article } = this.state;
-    console.log(article);
+
     return (
       <main>
         {isLoading ? (
