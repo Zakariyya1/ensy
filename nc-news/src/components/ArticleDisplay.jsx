@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import * as api from '../api';
 import { formatDate } from '../utils/utils';
+import CommentsList from './CommentsList';
 
 class ArticleDisplay extends Component {
   state = {
     isLoading: true,
-    article: {}
+    article: {},
+    comments: []
   };
 
   componentDidMount = () => {
@@ -16,7 +18,7 @@ class ArticleDisplay extends Component {
   };
 
   render() {
-    const { isLoading, article } = this.state;
+    const { isLoading, article, comments } = this.state;
 
     return (
       <main>
@@ -29,11 +31,23 @@ class ArticleDisplay extends Component {
               by {`${article.author}`} on {`${formatDate(article.created_at)}`}
             </p>
             <p>{article.body}</p>
+            <button onClick={this.fetchComments}>
+              {article.comment_count} Comments
+            </button>
+            <CommentsList comments={comments} />
           </article>
         )}
       </main>
     );
   }
+
+  fetchComments = () => {
+    const { article_id } = this.props;
+
+    api.getCommentsByArticleId(article_id).then((comments) => {
+      this.setState({ comments });
+    });
+  };
 }
 
 export default ArticleDisplay;

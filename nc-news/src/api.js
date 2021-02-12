@@ -27,3 +27,9 @@ export const getArticleById = (article_id) => {
     .get(`/articles/${article_id}`)
     .then(({ data: { article } }) => article);
 };
+
+export const getCommentsByArticleId = (article_id) => {
+  return request
+    .get(`articles/${article_id}/comments`)
+    .then(({ data: { comments } }) => comments);
+};
