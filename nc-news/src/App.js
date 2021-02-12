@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Title from './components/Title';
 import { Router } from '@reach/router';
 import PublishArticle from './components/PublishArticle';
+import ArticleDisplay from './components/ArticleDisplay';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <NavBar />
       <Router>
         <ArticlesList path="/" />
-        <ArticlesList path="/:topic/articles" />
+        <ArticlesList path="/articles/:topic" />
+        <ArticleDisplay path="/:article_id" />
         <PublishArticle path="/publish" />
       </Router>
     </div>
