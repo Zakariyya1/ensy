@@ -13,8 +13,8 @@ function App() {
       <NavBar />
       <Router>
         <ArticlesList path="/" />
-        <ArticlesList path="/articles/:topic" />
-        <ArticleDisplay path="/:article_id" />
+        <ArticlesList path="/articles/topic/:topic" />
+        <ArticleDisplay path="/articles/:article_id" />
         <PublishArticle path="/publish" />
       </Router>
     </div>

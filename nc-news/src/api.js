@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const request = axios.create({
-  baseURL: 'http://be-nc-news-api.herokuapp.com/api'
+  baseURL: 'http://ensy-api.herokuapp.com/api'
 });
 
 export const getTopics = () => {
