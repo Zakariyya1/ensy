@@ -5,6 +5,7 @@ import Title from './components/Title';
 import { Router } from '@reach/router';
 import PublishArticle from './components/PublishArticle';
 import ArticleDisplay from './components/ArticleDisplay';
+import ErrorPage from './components/ErrorPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <ArticlesList path="/users/:username/articles" />
         <ArticleDisplay path="/articles/:article_id" />
         <PublishArticle path="/publish" />
+        <ErrorPage default />
       </Router>
     </div>
   );

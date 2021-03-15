@@ -2,23 +2,38 @@ import React, { Component } from 'react';
 import * as api from '../api';
 import { formatDate } from '../utils/utils';
 import CommentsList from './CommentsList';
+import ErrorPage from './ErrorPage';
 
 class ArticleDisplay extends Component {
   state = {
     isLoading: true,
     article: {},
-    comments: []
+    comments: [],
+    errorMessage: ''
   };
 
   componentDidMount = () => {
     const { article_id } = this.props;
-    api.getArticleById(article_id).then((article) => {
-      this.setState({ article, isLoading: false });
-    });
+    api
+      .getArticleById(article_id)
+      .then((article) => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(
+        ({
+          response: {
+            data: { msg }
+          }
+        }) => {
+          this.setState({ errorMessage: msg });
+        }
+      );
   };
 
   render() {
-    const { isLoading, article, comments } = this.state;
+    const { isLoading, article, comments, errorMessage } = this.state;
+
+    if (errorMessage) return <ErrorPage msg={errorMessage} />;
 
     return (
       <main>
