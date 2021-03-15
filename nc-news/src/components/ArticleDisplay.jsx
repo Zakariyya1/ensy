@@ -31,6 +31,14 @@ class ArticleDisplay extends Component {
               by {`${article.author}`} on {`${formatDate(article.created_at)}`}
             </p>
             <p>{article.body}</p>
+            <button className="vote-button up" onClick={this.upVote}>
+              Like
+            </button>
+            <p className="votes">{article.votes}</p>
+            <button className="vote-button down" onClick={this.downVote}>
+              Dislike
+            </button>
+            <br />
             <button onClick={this.fetchComments}>
               {article.comment_count} Comments
             </button>
@@ -47,6 +55,24 @@ class ArticleDisplay extends Component {
     api.getCommentsByArticleId(article_id).then((comments) => {
       this.setState({ comments });
     });
+  };
+
+  upVote = () => {
+    if (this.state.article.votes < 1) this.changeVote(1);
+  };
+
+  downVote = () => {
+    if (this.state.article.votes > 0) this.changeVote(-1);
+  };
+
+  changeVote = (vote) => {
+    api
+      .changeArticlesVotes(this.state.article.article_id, vote)
+      .then((newArticle) => {
+        this.setState(({ article }) => {
+          return { article: { ...article, votes: (article.votes += vote) } };
+        });
+      });
   };
 }
 
