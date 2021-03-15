@@ -5,7 +5,7 @@ const Title = () => {
   return (
     <header className="title">
       <Link to={`/`}>
-        <h1>NC-News</h1>
+        <h1>Ensy</h1>
       </Link>
     </header>
   );
