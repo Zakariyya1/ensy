@@ -7,7 +7,8 @@ class PublishArticle extends Component {
     body: '',
     author: '',
     topic: '',
-    topics: []
+    topics: [],
+    submitted: false
   };
 
   componentDidMount = () => {
@@ -16,14 +17,31 @@ class PublishArticle extends Component {
     });
   };
 
+  handleChange = ({ target: { id, value } }) => {
+    this.setState({ [id]: value });
+  };
+
+  handleSubmit = (event) => {
+    this.setState({ submitted: true });
+  };
+
   render() {
-    const { title, body, topics } = this.state;
-    console.log(this.state);
+    const { title, body, topic, topics, submitted } = this.state;
+
+    if (submitted) return <p>Article submitted for review</p>;
     return (
-      <form>
-        <input placeholder="Article Name" id="title" />
-        <select id="topic">
-          <option>Select Topic</option>
+      <form onSubmit={this.handleSubmit}>
+        <input
+          placeholder="Title"
+          id="title"
+          value={title}
+          onChange={this.handleChange}
+          required
+        />
+        <select id="topic" onChange={this.handleChange} required>
+          <option value={topic} onChange={this.handleChange} required>
+            Select Topic
+          </option>
           {topics.map((topic) => {
             return (
               <option key={topic.slug} value={topic.slug}>
@@ -32,7 +50,14 @@ class PublishArticle extends Component {
             );
           })}
         </select>
-        <textarea rows="10" placeholder="Article Body" id="body" />
+        <textarea
+          rows="10"
+          placeholder="Article Body"
+          id="body"
+          value={body}
+          onChange={this.handleChange}
+          required
+        />
         <button>Post Article</button>
       </form>
     );
