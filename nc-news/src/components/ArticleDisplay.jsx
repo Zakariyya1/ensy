@@ -28,6 +28,8 @@ class ArticleDisplay extends Component {
           this.setState({ errorMessage: msg });
         }
       );
+
+    this.fetchComments();
   };
 
   render() {
@@ -54,9 +56,6 @@ class ArticleDisplay extends Component {
               Dislike
             </button>
             <br />
-            <button onClick={this.fetchComments}>
-              {article.comment_count} Comments
-            </button>
             <CommentsList comments={comments} />
           </article>
         )}

@@ -41,6 +41,6 @@ export const changeArticlesVotes = (article_id, vote_count) => {
     .then(({ data: { article } }) => article);
 };
 
-export const addItem = (type, newItem) => {
-  return request.post(`/${type}`, newItem).then(({ data }) => data);
+export const addComment = (comment) => {
+  return request.post(`/comment`, comment).then(({ data }) => data);
 };
