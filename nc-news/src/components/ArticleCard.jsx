@@ -7,7 +7,9 @@ const ArticleCard = (props) => {
       <h3>
         <Link to={`/articles/${props.article_id}`}>{props.title}</Link>{' '}
       </h3>
-      <p>by {`${props.author}`}</p>
+      <p>
+        by <Link to={`/users/${props.author}/articles`}>{props.author}</Link>{' '}
+      </p>
       <p>topic: {`${props.topic}`}</p>
       <p>comments | {`${props.comment_count}`}</p>
       <p>votes | {`${props.votes}`}</p>

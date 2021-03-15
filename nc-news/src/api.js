@@ -10,11 +10,12 @@ export const getTopics = () => {
   });
 };
 
-export const getArticles = (topic) => {
+export const getArticles = (topic, author) => {
   return request
     .get('/articles', {
       params: {
-        topic
+        topic,
+        author
       }
     })
     .then(({ data: { articles } }) => {
