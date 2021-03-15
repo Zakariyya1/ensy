@@ -56,7 +56,11 @@ class ArticleDisplay extends Component {
               Dislike
             </button>
             <br />
-            <CommentsList comments={comments} />
+            <CommentsList
+              comments={comments}
+              article_id={article.article_id}
+              updateComments={this.updateComments}
+            />
           </article>
         )}
       </main>
@@ -87,6 +91,18 @@ class ArticleDisplay extends Component {
           return { article: { ...article, votes: (article.votes += vote) } };
         });
       });
+  };
+
+  updateComments = (comment) => {
+    this.setState(({ comments, article }) => {
+      return {
+        comments: [comment, ...comments],
+        article: {
+          ...article,
+          comment_count: article.comment_count + 1
+        }
+      };
+    });
   };
 }
 

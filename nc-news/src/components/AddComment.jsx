@@ -3,20 +3,29 @@ import * as api from '../api';
 
 export default class AddComment extends Component {
   state = {
-    body: '',
-    username: 'weegembump'
+    comment: {
+      body: '',
+      username: 'weegembump'
+    }
   };
 
-  handleChange = ({ target: { id, value } }) => {
-    this.setState({ [id]: value });
+  handleChange = ({ target: { value } }) => {
+    this.setState({ comment: { body: value, username: 'weegembump' } });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
+    api
+      .addComment(this.props.article_id, this.state.comment)
+      .then(({ comment }) => this.props.updateComments(comment));
+
+    this.setState({ comment: { body: '', username: 'weegembump' } });
   };
 
   render() {
-    const { body } = this.state;
+    const {
+      comment: { body }
+    } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <textarea
