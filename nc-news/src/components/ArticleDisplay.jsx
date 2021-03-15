@@ -60,6 +60,7 @@ class ArticleDisplay extends Component {
               comments={comments}
               article_id={article.article_id}
               updateComments={this.updateComments}
+              removeComment={this.removeComment}
             />
           </article>
         )}
@@ -100,6 +101,21 @@ class ArticleDisplay extends Component {
         article: {
           ...article,
           comment_count: article.comment_count + 1
+        }
+      };
+    });
+  };
+
+  removeComment = (comment_id) => {
+    this.setState(({ comments, article }) => {
+      const newComments = comments.filter(
+        (comment) => comment.comment_id !== comment_id
+      );
+      return {
+        comments: newComments,
+        article: {
+          ...article,
+          comment_count: article.comment_count - 1
         }
       };
     });

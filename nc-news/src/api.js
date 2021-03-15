@@ -46,3 +46,7 @@ export const addComment = (article_id, comment) => {
     .post(`/articles/${article_id}/comments`, comment)
     .then(({ data }) => data);
 };
+
+export const deleteComment = (comment_id) => {
+  return request.delete(`/comments/${comment_id}`);
+};
