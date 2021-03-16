@@ -55,11 +55,12 @@ class ArticleDisplay extends Component {
             </p>
             <p className="articlebody">{article.body}</p>
             <button className="vote-button-up" onClick={this.upVote}>
-              Like
+              👍
             </button>
             <p className="votes">{article.votes}</p>
             <button className="vote-button-down" onClick={this.downVote}>
-              Dislike
+              {' '}
+              👎{' '}
             </button>
             <br />
             <CommentsList

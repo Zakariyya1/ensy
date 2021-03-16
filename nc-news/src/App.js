@@ -1,3 +1,4 @@
+import './styles/App.css';
 import ArticlesList from './components/ArticlesList';
 import NavBar from './components/NavBar';
 import Title from './components/Title';

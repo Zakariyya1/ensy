@@ -12,8 +12,8 @@ const ArticleCard = (props) => {
         by <Link to={`/users/${props.author}/articles`}>{props.author}</Link>{' '}
       </p>
       <p>topic: {`${props.topic}`}</p>
-      <p>comments | {`${props.comment_count}`}</p>
-      <p>votes | {`${props.votes}`}</p>
+      <p className="commentnumber">{`${props.comment_count}`} 💬 </p>
+      <p className="likesnumber">{`${props.votes}`} 👍 </p>
     </section>
   );
 };

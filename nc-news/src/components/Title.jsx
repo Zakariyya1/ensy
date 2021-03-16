@@ -8,9 +8,6 @@ const Title = () => {
       <div className="header-left">
         <h1 className="brand">Ensy</h1>
       </div>
-      <div className="header-right">
-        <p className="greeting">Account: weegembump</p>
-      </div>
     </header>
   );
 };
