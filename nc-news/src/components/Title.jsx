@@ -4,10 +4,13 @@ import { Link } from '@reach/router';
 
 const Title = () => {
   return (
-    <header className="title">
-      <Link to={`/`}>
-        <h1>Ensy</h1>
-      </Link>
+    <header className="header">
+      <div className="header-left">
+        <h1 className="brand">Ensy</h1>
+      </div>
+      <div className="header-right">
+        <p className="greeting">Account: weegembump</p>
+      </div>
     </header>
   );
 };

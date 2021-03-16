@@ -1,4 +1,44 @@
-.title {
-  border: #c71b1b solid 3px;
-  text-align: center;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 5px 20px;
+  background: rgb(0, 0, 0);
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  height: 50px;
+}
+
+div.header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+p.greeting {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  color: rgb(255, 255, 255);
+  font-size: 0.8em;
+  margin-right: 2.5em;
+}
+
+h1.brand {
+  margin: 0;
+  font-size: 1.8rem;
+  background: -webkit-linear-gradient(45deg, #209bff, #ffbb00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
