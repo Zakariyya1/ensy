@@ -1,3 +1,4 @@
+import '../styles/AddComment.css';
 import React, { Component } from 'react';
 import * as api from '../api';
 
@@ -27,7 +28,7 @@ export default class AddComment extends Component {
       comment: { body }
     } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="addcomment" onSubmit={this.handleSubmit}>
         <textarea
           rows="5"
           value={body}

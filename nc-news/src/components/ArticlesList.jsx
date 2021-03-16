@@ -1,3 +1,4 @@
+import '../styles/ArticlesList.css';
 import React, { Component } from 'react';
 import * as api from '../api';
 import ArticleCard from './ArticleCard';

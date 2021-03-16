@@ -1,3 +1,4 @@
+import '../styles/NavBar.css';
 import { Link } from '@reach/router';
 import React, { Component } from 'react';
 import * as api from '../api';

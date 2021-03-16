@@ -1,3 +1,4 @@
+import '../styles/CommentCard.css';
 import React from 'react';
 import * as api from '../api';
 import { formatDate } from '../utils/utils';

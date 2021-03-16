@@ -1,3 +1,4 @@
+import '../styles/CommentsList.css';
 import React from 'react';
 import AddComment from './AddComment';
 import CommentCard from './CommentCard';

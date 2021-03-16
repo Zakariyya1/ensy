@@ -1,3 +1,4 @@
+import '../styles/ArticleDisplay.css';
 import React, { Component } from 'react';
 import * as api from '../api';
 import { Link } from '@reach/router';
