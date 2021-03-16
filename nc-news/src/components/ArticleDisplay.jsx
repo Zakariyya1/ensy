@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../api';
+import { Link } from '@reach/router';
 import { formatDate } from '../utils/utils';
 import CommentsList from './CommentsList';
 import ErrorPage from './ErrorPage';
@@ -45,7 +46,11 @@ class ArticleDisplay extends Component {
           <article>
             <h2>{article.title}</h2>
             <p>
-              by {`${article.author}`} on {`${formatDate(article.created_at)}`}
+              by{' '}
+              <Link
+                to={`/users/${article.author}/articles`}
+              >{`${article.author}`}</Link>{' '}
+              on {`${formatDate(article.created_at)}`}
             </p>
             <p>{article.body}</p>
             <button className="vote-button up" onClick={this.upVote}>
