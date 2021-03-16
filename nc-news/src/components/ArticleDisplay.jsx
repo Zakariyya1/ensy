@@ -40,25 +40,25 @@ class ArticleDisplay extends Component {
     if (errorMessage) return <ErrorPage msg={errorMessage} />;
 
     return (
-      <main>
+      <main className="articledisplay">
         {isLoading ? (
           <p>Loading...</p>
         ) : (
           <article>
-            <h2>{article.title}</h2>
-            <p>
+            <h2 className="articletitle">{article.title}</h2>
+            <p className="author">
               by{' '}
               <Link
                 to={`/users/${article.author}/articles`}
               >{`${article.author}`}</Link>{' '}
               on {`${formatDate(article.created_at)}`}
             </p>
-            <p>{article.body}</p>
-            <button className="vote-button up" onClick={this.upVote}>
+            <p className="articlebody">{article.body}</p>
+            <button className="vote-button-up" onClick={this.upVote}>
               Like
             </button>
             <p className="votes">{article.votes}</p>
-            <button className="vote-button down" onClick={this.downVote}>
+            <button className="vote-button-down" onClick={this.downVote}>
               Dislike
             </button>
             <br />

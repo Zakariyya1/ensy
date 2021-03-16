@@ -36,7 +36,8 @@ export default class AddComment extends Component {
           onChange={this.handleChange}
           id="body"
           required
-        />
+        />{' '}
+        <br />
         <button>Add Comment</button>
       </form>
     );

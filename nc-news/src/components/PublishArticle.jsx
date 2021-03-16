@@ -31,14 +31,15 @@ class PublishArticle extends Component {
 
     if (submitted) return <p>Article submitted for review</p>;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="publisharticle" onSubmit={this.handleSubmit}>
         <input
           placeholder="Title"
           id="title"
           value={title}
           onChange={this.handleChange}
           required
-        />
+        />{' '}
+        <br />
         <select id="topic" onChange={this.handleChange} required>
           <option value={topic} onChange={this.handleChange} required>
             Select Topic
@@ -50,7 +51,8 @@ class PublishArticle extends Component {
               </option>
             );
           })}
-        </select>
+        </select>{' '}
+        <br />
         <textarea
           rows="10"
           placeholder="Article Body"
@@ -58,7 +60,8 @@ class PublishArticle extends Component {
           value={body}
           onChange={this.handleChange}
           required
-        />
+        />{' '}
+        <br />
         <button>Post Article</button>
       </form>
     );

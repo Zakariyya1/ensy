@@ -15,7 +15,7 @@ const CommentCard = (props) => {
 
   const isAuthor = props.author === 'weegembump';
   return (
-    <>
+    <main className="commentcard">
       <p>{props.body}</p>
       <p>
         by{' '}
@@ -27,7 +27,7 @@ const CommentCard = (props) => {
       ) : (
         false
       )}
-    </>
+    </main>
   );
 };
 

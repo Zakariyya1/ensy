@@ -15,7 +15,7 @@ class NavBar extends Component {
 
   render() {
     const { topics, isLoading } = this.state;
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p className="loading">Loading...</p>;
     return (
       <nav className="navbar">
         <button>

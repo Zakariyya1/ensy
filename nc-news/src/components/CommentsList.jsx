@@ -10,7 +10,7 @@ const CommentsList = ({
   removeComment
 }) => {
   return (
-    <>
+    <main className="commentslist">
       <AddComment article_id={article_id} updateComments={updateComments} />
       {comments.map((comment) => {
         return (
@@ -21,7 +21,7 @@ const CommentsList = ({
           />
         );
       })}
-    </>
+    </main>
   );
 };
 

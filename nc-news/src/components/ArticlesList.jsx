@@ -25,7 +25,7 @@ class ArticlesList extends Component {
     const { articles, isLoading, errorMessage } = this.state;
 
     if (errorMessage) return <ErrorPage msg={errorMessage} />;
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p className="loading">Loading...</p>;
     return (
       <main className="articleslist">
         {this.props.topic && (

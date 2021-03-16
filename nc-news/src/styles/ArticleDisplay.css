@@ -1,0 +1,24 @@
+.articledisplay {
+  text-align: center;
+  border: #0a8a9b solid 3px;
+}
+
+h2.articletitle {
+  text-align: center;
+}
+
+p.author {
+  text-align: center;
+}
+
+p.articlebody {
+  text-align: center;
+}
+
+button.vote-button-up {
+  border-color: aqua;
+}
+
+button.vote-button-down {
+  border-color: aqua;
+}
