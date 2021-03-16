@@ -1,5 +1,7 @@
 import React from 'react';
 import * as api from '../api';
+import { formatDate } from '../utils/utils';
+import { Link } from '@reach/router';
 
 const CommentCard = (props) => {
   const deleteComment = () => {
@@ -14,8 +16,11 @@ const CommentCard = (props) => {
   return (
     <>
       <p>{props.body}</p>
-      <p>by {props.author}</p>
-      <p>on {props.created_at}</p>
+      <p>
+        by{' '}
+        <Link to={`/users/${props.author}/articles`}>{`${props.author}`}</Link>{' '}
+        on {formatDate(props.created_at)}
+      </p>
       {isAuthor ? (
         <button onClick={deleteComment}>Delete Comment</button>
       ) : (

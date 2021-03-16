@@ -34,6 +34,7 @@ export default class AddComment extends Component {
           placeholder="Add your comment here"
           onChange={this.handleChange}
           id="body"
+          required
         />
         <button>Add Comment</button>
       </form>
