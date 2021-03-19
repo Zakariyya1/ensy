@@ -3,6 +3,22 @@
   border: #0a8a9b solid 3px;
 }
 
+.articledisplay a {
+  color: rgb(18, 51, 71);
+}
+
+article.article {
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  color: rgb(18, 51, 71);
+}
+
 h2.articletitle {
   text-align: center;
 }
@@ -12,13 +28,19 @@ p.author {
 }
 
 p.articlebody {
-  text-align: center;
+  text-align: start;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 button.vote-button-up {
-  border-color: aqua;
+  border: solid rgb(18, 51, 71) 3px;
+  border-radius: 50%;
+  padding: 1rem;
 }
 
 button.vote-button-down {
-  border-color: aqua;
+  border: solid rgb(18, 51, 71) 3px;
+  border-radius: 50%;
+  padding: 1rem;
 }

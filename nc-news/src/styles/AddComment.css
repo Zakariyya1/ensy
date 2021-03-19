@@ -1,4 +1,6 @@
 .addcomment {
-  border: #83d12a solid 3px;
   text-align: center;
+  margin-top: 2vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
 }

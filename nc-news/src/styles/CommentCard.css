@@ -1,4 +1,15 @@
 .commentcard {
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  padding: 1rem;
   text-align: center;
-  border: #000000 solid 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  color: rgb(18, 51, 71);
+}
+
+.commentcard a {
+  color: rgb(18, 51, 71);
 }
