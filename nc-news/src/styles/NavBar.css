@@ -22,7 +22,13 @@ ul.navbar li a {
 }
 
 @media screen and (max-width: 344px) {
+  ul.navbar {
+    position: relative;
+  }
   ul.navbar li {
     float: none;
+  }
+  ul.navbar li a {
+    padding: 1vw;
   }
 }
