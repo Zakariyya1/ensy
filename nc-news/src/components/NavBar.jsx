@@ -18,18 +18,18 @@ class NavBar extends Component {
     const { topics, isLoading } = this.state;
     if (isLoading) return <SyncLoader />;
     return (
-      <nav className="navbar">
-        <button className="publish">
+      <ul className="navbar">
+        <li className="publish">
           <Link to={`/publish`}>publish</Link>
-        </button>
+        </li>
         {topics.map((topic) => {
           return (
-            <button className={topic.slug} key={`${topic.slug}`}>
+            <li className={topic.slug} key={`${topic.slug}`}>
               <Link to={`/articles/topic/${topic.slug}`}>{topic.slug}</Link>
-            </button>
+            </li>
           );
         })}{' '}
-      </nav>
+      </ul>
     );
   }
 

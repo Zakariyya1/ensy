@@ -4,7 +4,6 @@ import * as api from '../api';
 import ArticleCard from './ArticleCard';
 import ErrorPage from './ErrorPage';
 import { SyncLoader } from 'react-spinners';
-import NavBar from './NavBar';
 
 class ArticlesList extends Component {
   state = {
@@ -30,7 +29,6 @@ class ArticlesList extends Component {
     if (isLoading) return <SyncLoader />;
     return (
       <main className="articleslist">
-        <NavBar />
         {this.props.topic && (
           <h3 className="articleslisth3">Topic: {`${this.props.topic}`}</h3>
         )}

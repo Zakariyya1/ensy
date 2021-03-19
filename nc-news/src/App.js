@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Title />
+      <NavBar />
       <Router>
         <ArticlesList path="/" />
         <ArticlesList path="/articles/topic/:topic" />
