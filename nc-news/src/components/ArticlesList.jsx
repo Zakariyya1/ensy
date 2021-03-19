@@ -30,7 +30,7 @@ class ArticlesList extends Component {
     return (
       <main className="articleslist">
         {this.props.topic && (
-          <h3 className="articleslisth3">Topic: {`${this.props.topic}`}</h3>
+          <p className="currenttopic">{`Only showing ${this.props.topic} articles`}</p>
         )}
         {articles.map((article) => {
           return <ArticleCard key={`${article.article_id}`} {...article} />;

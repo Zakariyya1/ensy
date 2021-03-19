@@ -16,7 +16,7 @@ class NavBar extends Component {
 
   render() {
     const { topics, isLoading } = this.state;
-    if (isLoading) return <SyncLoader />;
+    if (isLoading) return <></>;
     return (
       <ul className="navbar">
         <li className="publish">

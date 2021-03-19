@@ -21,12 +21,7 @@ ul.navbar li a {
   text-decoration: none;
 }
 
-ul.navbar li.right {
-  float: right;
-}
-
 @media screen and (max-width: 344px) {
-  ul.navbar li.right,
   ul.navbar li {
     float: none;
   }

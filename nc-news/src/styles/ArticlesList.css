@@ -3,9 +3,8 @@
   text-align: center;
 }
 
-.articleslisth3 {
-  border: #881bc7 solid 3px;
-  margin: 0%;
+.currenttopic {
+  display: block;
   text-align: center;
 }
 
