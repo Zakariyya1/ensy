@@ -1,19 +1,15 @@
 .articlecard {
   margin-top: 2vw;
   margin-bottom: 2vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  padding: 1rem;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  color: rgb(18, 51, 71);
 }
 
-@media screen and (max-width: 400px) {
-  .articlecard {
-    margin-top: 2vw;
-    margin-bottom: 2vw;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+.articlecard a {
+  color: rgb(18, 51, 71);
 }
