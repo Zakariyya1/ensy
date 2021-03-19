@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import * as api from '../api';
 import ArticleCard from './ArticleCard';
 import ErrorPage from './ErrorPage';
+import { SyncLoader } from 'react-spinners';
+import NavBar from './NavBar';
 
 class ArticlesList extends Component {
   state = {
@@ -25,9 +27,10 @@ class ArticlesList extends Component {
     const { articles, isLoading, errorMessage } = this.state;
 
     if (errorMessage) return <ErrorPage msg={errorMessage} />;
-    if (isLoading) return <p className="loading">Loading...</p>;
+    if (isLoading) return <SyncLoader />;
     return (
       <main className="articleslist">
+        <NavBar />
         {this.props.topic && (
           <h3 className="articleslisth3">Topic: {`${this.props.topic}`}</h3>
         )}

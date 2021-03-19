@@ -6,7 +6,9 @@ const Title = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <h1 className="brand">Ensy</h1>
+        <h1 className="brand">
+          <Link to="/">Ensy</Link>
+        </h1>
       </div>
     </header>
   );

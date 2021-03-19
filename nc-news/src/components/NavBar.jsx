@@ -2,6 +2,7 @@ import '../styles/NavBar.css';
 import { Link } from '@reach/router';
 import React, { Component } from 'react';
 import * as api from '../api';
+import { SyncLoader } from 'react-spinners';
 
 class NavBar extends Component {
   state = {
@@ -15,18 +16,15 @@ class NavBar extends Component {
 
   render() {
     const { topics, isLoading } = this.state;
-    if (isLoading) return <p className="loading">Loading...</p>;
+    if (isLoading) return <SyncLoader />;
     return (
       <nav className="navbar">
-        <button>
-          <Link to={`/`}>home</Link>
-        </button>
-        <button>
-          <Link to={`/publish`}>publish article</Link>
+        <button className="publish">
+          <Link to={`/publish`}>publish</Link>
         </button>
         {topics.map((topic) => {
           return (
-            <button key={`${topic.slug}`}>
+            <button className={topic.slug} key={`${topic.slug}`}>
               <Link to={`/articles/topic/${topic.slug}`}>{topic.slug}</Link>
             </button>
           );
